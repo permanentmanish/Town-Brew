@@ -1,21 +1,35 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#f5efe8" />
-  <meta name="description" content="Town Brew Cafe in Pithoragarh, Uttarakhand — coffee, tea, snacks, quick service, and a cozy local atmosphere. Call, WhatsApp, or visit today." />
-  <meta name="keywords" content="Town Brew Cafe, cafe in Pithoragarh, coffee shop Pithoragarh, tea cafe Uttarakhand, snacks, WhatsApp cafe" />
+  <meta name="theme-color" content="#fbf7f2" />
+  <meta name="description" content="Town Brew Cafe in Pithoragarh — affordable coffee, tea, snacks, cozy atmosphere, and fast service. Call, WhatsApp, or visit today." />
+  <meta name="keywords" content="Cafe in Pithoragarh, Coffee Shop Pithoragarh, Tea Cafe Uttarakhand, Town Brew Cafe" />
   <meta property="og:title" content="Town Brew Cafe | Coffee, Tea & Snacks in Pithoragarh" />
-  <meta property="og:description" content="Visit Town Brew Cafe in Pithoragarh for coffee, tea, snacks, and a cozy local cafe experience." />
+  <meta property="og:description" content="Visit Town Brew Cafe in Pithoragarh for coffee, tea, snacks and a cozy atmosphere." />
   <meta property="og:type" content="website" />
-  <meta name="robots" content="index,follow" />
-  <title>Town Brew Cafe | Coffee, Tea & Snacks in Pithoragarh</title>
+  <title>Town Brew Cafe | Pithoragarh</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CafeOrCoffeeShop",
+    "name": "Town Brew Cafe",
+    "telephone": "+911234567890",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Pithoragarh",
+      "addressRegion": "Uttarakhand",
+      "addressCountry": "IN"
+    },
+    "servesCuisine": "Cafe",
+    "priceRange": "₹₹"
+  }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -30,13 +44,7 @@
         </span>
       </a>
 
-      <button
-        class="menu-toggle"
-        id="menuToggle"
-        aria-label="Open navigation menu"
-        aria-controls="siteNav"
-        aria-expanded="false"
-      >
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-controls="siteNav" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
 
@@ -50,27 +58,30 @@
       </nav>
 
       <div class="nav-actions">
-        <a class="btn btn-ghost" id="callTop" href="tel:+911234567890">Call Now</a>
-        <a class="btn btn-primary" id="waTop" href="https://wa.me/911234567890?text=Hi%20Town%20Brew%20Cafe%2C%20I%20want%20to%20know%20about%20the%20menu." target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn btn-ghost" data-phone-link href="tel:+911234567890">Call Now</a>
+        <a class="btn btn-primary" data-wa-link target="_blank" rel="noopener" href="https://wa.me/911234567890?text=Hi%20Town%20Brew%20Cafe%2C%20I%20want%20to%20know%20more%20about%20the%20menu%20and%20visiting%20today.">WhatsApp</a>
       </div>
     </div>
   </header>
 
   <main id="main">
     <section class="hero" id="hero">
-      <div class="hero-bg" aria-hidden="true"></div>
       <div class="container hero-grid">
-        <div class="hero-copy reveal">
-          <div class="eyebrow">Local cafe in Pithoragarh</div>
-          <h1>Coffee, tea, and fresh snacks for everyday visits.</h1>
+        <div class="hero-copy">
+          <div class="eyebrow">Modern minimal cafe in Pithoragarh</div>
+          <h1>Pithoragarh's Cozy Cafe for Coffee, Tea & Fresh Snacks</h1>
           <p class="hero-lead">
-            Town Brew Cafe is a cozy local stop for students, friends, families, and working people who want quick service,
-            affordable drinks, and a relaxed place to sit in Pithoragarh.
+            Freshly brewed coffee, masala tea, quick bites, and comfortable seating.
+            Perfect for students, friends, remote work, and evening hangouts in the heart of Pithoragarh.
           </p>
 
+          <div class="hero-location">
+            📍 Pithoragarh • Open Daily 8 AM – 10 PM • Call Ahead Available
+          </div>
+
           <div class="hero-actions">
-            <a class="btn btn-primary btn-xl" id="callHero" href="tel:+911234567890">Call Now</a>
-            <a class="btn btn-secondary btn-xl" href="https://wa.me/911234567890?text=Hi%20Town%20Brew%20Cafe%2C%20I%20want%20to%20know%20about%20the%20menu%20and%20visit%20today." target="_blank" rel="noopener">WhatsApp Us</a>
+            <a class="btn btn-primary btn-xl" data-phone-link href="tel:+911234567890">Call Now</a>
+            <a class="btn btn-secondary btn-xl" data-wa-link target="_blank" rel="noopener" href="https://wa.me/911234567890?text=Hi%20Town%20Brew%20Cafe%2C%20I%20want%20to%20know%20about%20the%20menu%20and%20visiting%20today.">WhatsApp Us</a>
             <a class="btn btn-secondary btn-xl" href="#menu">View Menu</a>
           </div>
 
@@ -80,30 +91,28 @@
             <div class="trust-pill">Fast service</div>
             <div class="trust-pill">Cozy seating</div>
           </div>
-
-          <div class="hero-social-proof">
-            <div>
-              <strong>Open daily</strong>
-              <span>8:00 AM – 10:00 PM</span>
-            </div>
-            <div>
-              <strong>Serving Pithoragarh</strong>
-              <span>Students, families & professionals</span>
-            </div>
-          </div>
-
-          <div class="hero-location" aria-label="Business location and hours">
-            📍 Pithoragarh, Uttarakhand • Call or WhatsApp before you visit
-          </div>
         </div>
 
-        <div class="hero-card reveal">
+        <div class="hero-card">
           <div class="hero-card-top">
             <span class="status-dot"></span>
             Open now
           </div>
 
-          <div class="hero-photo" role="img" aria-label="Warm modern cafe interior with coffee and snacks"></div>
+          <div class="hero-visual" aria-hidden="true">
+            <div class="hero-visual-panel hero-panel-1">
+              <span class="hero-label">Coffee</span>
+              <strong>Freshly brewed</strong>
+            </div>
+            <div class="hero-visual-panel hero-panel-2">
+              <span class="hero-label">Tea</span>
+              <strong>Masala & ginger</strong>
+            </div>
+            <div class="hero-visual-panel hero-panel-3">
+              <span class="hero-label">Snacks</span>
+              <strong>Quick bites</strong>
+            </div>
+          </div>
 
           <div class="hero-card-bottom">
             <p class="mini-title">Best for</p>
@@ -113,19 +122,19 @@
               <span>Evening tea</span>
               <span>Quick snacks</span>
             </div>
-            <a class="btn btn-primary btn-full" href="#menu">View Menu</a>
+            <a class="btn btn-primary btn-full" href="#contact">Visit Today</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="quick-bar" aria-label="Quick contact links">
+    <section class="quick-bar">
       <div class="container quick-grid">
-        <a class="quick-item" href="tel:+911234567890" id="quickCall">
+        <a class="quick-item" data-phone-link href="tel:+911234567890">
           <span class="quick-label">Call</span>
           <strong>+91 12345 67890</strong>
         </a>
-        <a class="quick-item" id="quickWhatsApp" href="https://wa.me/911234567890?text=Hi%20Town%20Brew%20Cafe%2C%20I%20want%20to%20know%20more%20about%20your%20menu." target="_blank" rel="noopener">
+        <a class="quick-item" data-wa-link target="_blank" rel="noopener" href="https://wa.me/911234567890?text=Hi%20Town%20Brew%20Cafe%2C%20please%20share%20the%20menu.">
           <span class="quick-label">WhatsApp</span>
           <strong>Send a message</strong>
         </a>
@@ -142,21 +151,21 @@
 
     <section class="section about" id="about">
       <div class="container section-grid">
-        <div class="section-copy reveal">
+        <div class="section-copy">
           <div class="section-kicker">About Town Brew</div>
           <h2>Simple, warm, and designed for real everyday visits.</h2>
           <p>
-            Town Brew Cafe is a local cafe in Pithoragarh built for people who want a relaxed place to sit, sip, chat,
-            and grab something good without overpaying.
+            Town Brew Cafe is a modern minimal cafe in Pithoragarh created for people who want a relaxed place
+            to sit, sip, chat, and grab something good without overpaying.
           </p>
           <p>
-            We keep the experience clean and friendly: affordable pricing, fast service, tea and coffee favorites,
-            and snacks that work for breakfast, breaks, and evening catch-ups.
+            We keep it simple: affordable pricing, fast service, tea and coffee favorites, and snacks that work
+            for breakfast, breaks, and evening catch-ups.
           </p>
 
           <div class="local-proof">
-            <strong>Locally owned cafe</strong>
-            <p>Proudly serving the Pithoragarh community with everyday coffee, tea, and snack options.</p>
+            <strong>Locally Owned Cafe</strong>
+            <p>Proudly serving coffee, tea and snacks to the Pithoragarh community.</p>
           </div>
 
           <div class="stats">
@@ -175,10 +184,16 @@
           </div>
         </div>
 
-        <div class="section-visual reveal">
+        <div class="section-visual">
           <div class="image-stack">
-            <div class="image-large"></div>
-            <div class="image-small"></div>
+            <div class="feature-card feature-1">
+              <span>Modern minimal feel</span>
+              <strong>Clean, warm, and local</strong>
+            </div>
+            <div class="feature-card feature-2">
+              <span>For real visitors</span>
+              <strong>Students, friends, families</strong>
+            </div>
           </div>
         </div>
       </div>
@@ -186,15 +201,16 @@
 
     <section class="section menu" id="menu">
       <div class="container">
-        <div class="section-heading reveal">
+        <div class="section-heading">
           <div class="section-kicker">Featured Menu</div>
-          <h2>Popular drinks and snacks people come back for.</h2>
-          <p>Compact, clear, and easy to scan on mobile — so visitors quickly find what they want.</p>
+          <h2>Popular Drinks & Snacks</h2>
+          <p>Looking for coffee, tea or quick bites? Explore some of our customer favorites.</p>
+          <div class="menu-highlight">☕ Coffee • 🍵 Tea • 🥪 Snacks • 🥐 Quick Bites</div>
         </div>
 
         <div class="menu-grid">
-          <article class="menu-card reveal">
-            <div class="menu-icon">☕</div>
+          <article class="menu-card">
+            <div class="menu-price">₹80</div>
             <h3>Hot Coffee</h3>
             <p>Strong, smooth, and perfect for daily caffeine breaks.</p>
             <div class="menu-meta">
@@ -203,75 +219,95 @@
             </div>
           </article>
 
-          <article class="menu-card reveal">
-            <div class="menu-icon">🍵</div>
-            <h3>Tea Specials</h3>
-            <p>Classic tea, masala tea, and comforting local favorites.</p>
+          <article class="menu-card">
+            <div class="menu-price">₹35</div>
+            <h3>Masala Tea</h3>
+            <p>Classic tea with spices, milk, and a comforting local feel.</p>
             <div class="menu-meta">
               <span>Fresh brewed</span>
               <span>Affordable</span>
             </div>
           </article>
 
-          <article class="menu-card reveal">
-            <div class="menu-icon">🥪</div>
-            <h3>Snacks</h3>
-            <p>Light bites and quick snacks for small hunger and hangouts.</p>
+          <article class="menu-card">
+            <div class="menu-price">₹60</div>
+            <h3>Cold Coffee</h3>
+            <p>Chilled, creamy, and great for warm afternoons and long chats.</p>
             <div class="menu-meta">
-              <span>Ideal pairing</span>
+              <span>Refreshing</span>
+              <span>Popular choice</span>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="menu-price">₹55</div>
+            <h3>Cheese Toast</h3>
+            <p>Crisp, warm, and perfect with tea or coffee.</p>
+            <div class="menu-meta">
+              <span>Light snack</span>
               <span>Made fresh</span>
             </div>
           </article>
 
-          <article class="menu-card reveal">
-            <div class="menu-icon">🥐</div>
-            <h3>Quick Bites</h3>
-            <p>Simple items that work well with tea, coffee, and conversations.</p>
+          <article class="menu-card">
+            <div class="menu-price">₹90</div>
+            <h3>Veg Sandwich</h3>
+            <p>Simple, filling, and easy to enjoy on a quick break.</p>
             <div class="menu-meta">
-              <span>Grab & go</span>
-              <span>Great value</span>
+              <span>Quick bite</span>
+              <span>Good value</span>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="menu-price">₹70</div>
+            <h3>French Fries</h3>
+            <p>Golden, crisp, and made for sharing with friends.</p>
+            <div class="menu-meta">
+              <span>Shareable</span>
+              <span>Fan favorite</span>
             </div>
           </article>
         </div>
 
-        <div class="menu-cta reveal">
-          <a class="btn btn-primary" href="https://wa.me/911234567890?text=Hi%20Town%20Brew%20Cafe%2C%20please%20share%20your%20menu." target="_blank" rel="noopener">Ask for Menu on WhatsApp</a>
-          <a class="btn btn-secondary" href="tel:+911234567890">Call for Details</a>
+        <div class="menu-cta">
+          <a class="btn btn-primary" data-wa-link target="_blank" rel="noopener" href="https://wa.me/911234567890?text=Hi%20Town%20Brew%20Cafe%2C%20please%20share%20your%20menu.">Ask for Menu on WhatsApp</a>
+          <a class="btn btn-secondary" data-phone-link href="tel:+911234567890">Call for Details</a>
         </div>
       </div>
     </section>
 
     <section class="section why" id="why">
       <div class="container">
-        <div class="section-heading reveal">
+        <div class="section-heading">
           <div class="section-kicker">Why choose us</div>
           <h2>Built to feel local, not generic.</h2>
         </div>
 
         <div class="why-grid">
-          <article class="why-card reveal">
+          <article class="why-card">
             <h3>Affordable prices</h3>
             <p>Designed for repeat visits from students, workers, and local families.</p>
           </article>
-          <article class="why-card reveal">
+          <article class="why-card">
             <h3>Warm atmosphere</h3>
             <p>Minimal, welcoming, and calm enough for conversation or quiet time.</p>
           </article>
-          <article class="why-card reveal">
+          <article class="why-card">
             <h3>Fast service</h3>
             <p>Easy ordering and quick turnaround for busy people on the move.</p>
           </article>
-          <article class="why-card reveal">
+          <article class="why-card">
             <h3>Tea + coffee menu</h3>
-            <p>Reliable classics that match everyday Indian cafe habits.</p>
+            <p>Reliable classics that match everyday cafe habits.</p>
           </article>
-          <article class="why-card reveal">
+          <article class="why-card">
             <h3>Good snacks</h3>
             <p>Simple food that pairs well with drinks and small meetups.</p>
           </article>
-          <article class="why-card reveal">
-            <h3>Local business feel</h3>
-            <p>Clear address, call, map, and WhatsApp actions for easy decisions.</p>
+          <article class="why-card">
+            <h3>Easy to contact</h3>
+            <p>Clear call, WhatsApp, and map actions for quick decisions.</p>
           </article>
         </div>
       </div>
@@ -279,40 +315,70 @@
 
     <section class="section gallery" id="gallery">
       <div class="container">
-        <div class="section-heading reveal">
+        <div class="section-heading">
           <div class="section-kicker">Gallery</div>
           <h2>Soft light, clean surfaces, and a premium cafe feel.</h2>
-          <p>Use real photos here for the strongest trust signal.</p>
+          <p>Use real photos here later. For now, these cards stay visible and working.</p>
         </div>
 
         <div class="gallery-grid">
-          <div class="gallery-card gallery-1 reveal"></div>
-          <div class="gallery-card gallery-2 reveal"></div>
-          <div class="gallery-card gallery-3 reveal"></div>
-          <div class="gallery-card gallery-4 reveal"></div>
-          <div class="gallery-card gallery-5 reveal"></div>
-          <div class="gallery-card gallery-6 reveal"></div>
+          <article class="gallery-card g1">
+            <div>
+              <span>Morning chai</span>
+              <strong>Quiet start to the day</strong>
+            </div>
+          </article>
+          <article class="gallery-card g2">
+            <div>
+              <span>Coffee counter</span>
+              <strong>Freshly brewed drinks</strong>
+            </div>
+          </article>
+          <article class="gallery-card g3">
+            <div>
+              <span>Snacks</span>
+              <strong>Easy bites for quick visits</strong>
+            </div>
+          </article>
+          <article class="gallery-card g4">
+            <div>
+              <span>Cozy seating</span>
+              <strong>Comfortable places to pause</strong>
+            </div>
+          </article>
+          <article class="gallery-card g5">
+            <div>
+              <span>Evening light</span>
+              <strong>Warm atmosphere after work</strong>
+            </div>
+          </article>
+          <article class="gallery-card g6">
+            <div>
+              <span>Walk-in friendly</span>
+              <strong>Open, easy, and local</strong>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
     <section class="section reviews" id="reviews">
       <div class="container">
-        <div class="section-heading reveal">
+        <div class="section-heading">
           <div class="section-kicker">Testimonials</div>
           <h2>What local visitors care about most.</h2>
         </div>
 
         <div class="review-grid">
-          <article class="review-card reveal">
+          <article class="review-card">
             <p>“Great place to sit with friends. The vibe is calm, the tea is good, and prices are reasonable.”</p>
             <strong>Student visitor</strong>
           </article>
-          <article class="review-card reveal">
+          <article class="review-card">
             <p>“Fast service and a neat space. Easy to stop by after work for coffee and a snack.”</p>
             <strong>Young professional</strong>
           </article>
-          <article class="review-card reveal">
+          <article class="review-card">
             <p>“Feels local and welcoming, not overly flashy. Exactly the kind of cafe people in town need.”</p>
             <strong>Local customer</strong>
           </article>
@@ -322,19 +388,25 @@
 
     <section class="section contact" id="contact">
       <div class="container contact-grid">
-        <div class="contact-panel reveal">
+        <div class="contact-panel">
           <div class="section-kicker">Location & Contact</div>
           <h2>Find Town Brew Cafe in Pithoragarh.</h2>
-          <p class="contact-intro">Call ahead, ask for the menu on WhatsApp, or visit us directly.</p>
+          <p>Call ahead, ask for the menu on WhatsApp, or visit us directly.</p>
+
+          <div class="contact-trust">
+            <div>✓ Easy parking nearby</div>
+            <div>✓ Comfortable seating</div>
+            <div>✓ Takeaway available</div>
+          </div>
 
           <div class="contact-list">
             <div class="contact-row">
               <span>Phone</span>
-              <a href="tel:+911234567890">+91 12345 67890</a>
+              <a data-phone-link href="tel:+911234567890">+91 12345 67890</a>
             </div>
             <div class="contact-row">
               <span>WhatsApp</span>
-              <a id="waLink" href="https://wa.me/911234567890?text=Hi%20Town%20Brew%20Cafe%2C%20I%20want%20to%20know%20more%20about%20your%20menu." target="_blank" rel="noopener">Message us</a>
+              <a data-wa-link target="_blank" rel="noopener" href="https://wa.me/911234567890?text=Hi%20Town%20Brew%20Cafe%2C%20I%20want%20to%20visit%20today.">Message us</a>
             </div>
             <div class="contact-row">
               <span>Address</span>
@@ -346,19 +418,14 @@
             </div>
           </div>
 
-          <div class="contact-trust">
-            <span>✓ Comfortable seating</span>
-            <span>✓ Quick service</span>
-            <span>✓ Great for small meetups</span>
-          </div>
-
           <div class="contact-actions">
-            <a class="btn btn-primary" href="tel:+911234567890">Call Now</a>
+            <a class="btn btn-primary" data-phone-link href="tel:+911234567890">Call Now</a>
+            <a class="btn btn-secondary" data-wa-link target="_blank" rel="noopener" href="https://wa.me/911234567890?text=Hi%20Town%20Brew%20Cafe%2C%20I%20want%20to%20know%20more%20about%20the%20menu.">WhatsApp Us</a>
             <a class="btn btn-secondary" href="https://www.google.com/maps/search/?api=1&query=Town+Brew+Cafe+Pithoragarh" target="_blank" rel="noopener">Open in Maps</a>
           </div>
         </div>
 
-        <div class="map-panel reveal">
+        <div class="map-panel">
           <iframe
             title="Town Brew Cafe location map"
             src="https://www.google.com/maps?q=Pithoragarh%2C%20Uttarakhand&z=15&output=embed"
@@ -371,20 +438,20 @@
     </section>
   </main>
 
-  <a class="floating-whatsapp" id="waFloat" href="https://wa.me/911234567890?text=Hi%20Town%20Brew%20Cafe%2C%20I%20want%20to%20visit%20today." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <a class="floating-whatsapp" id="waFloat" data-wa-link href="https://wa.me/911234567890?text=Hi%20Town%20Brew%20Cafe%2C%20I%20want%20to%20visit%20today." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
     WhatsApp
   </a>
 
-  <div class="mobile-cta" aria-label="Mobile quick actions">
-    <a class="mobile-cta-call" href="tel:+911234567890">Call Now</a>
-    <a class="mobile-cta-visit" href="#contact">Visit Today</a>
+  <div class="mobile-cta">
+    <a class="mobile-cta-call" data-phone-link href="tel:+911234567890">Call Now</a>
+    <a class="mobile-cta-visit" href="#contact">Get Directions</a>
   </div>
 
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
         <div class="footer-brand">Town Brew Cafe</div>
-        <p>Modern cafe for coffee, tea, and snacks in Pithoragarh, Uttarakhand.</p>
+        <p>Modern minimal cafe for coffee, tea, and snacks in Pithoragarh.</p>
       </div>
       <div class="footer-links">
         <a href="#about">About</a>
@@ -399,24 +466,6 @@
     </div>
   </footer>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CafeOrCoffeeShop",
-    "name": "Town Brew Cafe",
-    "description": "A cozy local cafe in Pithoragarh serving coffee, tea, and snacks.",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Pithoragarh",
-      "addressRegion": "Uttarakhand",
-      "addressCountry": "IN"
-    },
-    "telephone": "+911234567890",
-    "servesCuisine": "Cafe",
-    "priceRange": "₹₹",
-    "areaServed": "Pithoragarh"
-  }
-  </script>
   <script src="script.js"></script>
 </body>
 </html>
