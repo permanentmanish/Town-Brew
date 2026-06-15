@@ -756,37 +756,89 @@ button,input,textarea,select{font:inherit}
   border-top:1px solid rgba(36,28,22,.08);
   background:rgba(255,255,255,.56);
 }
-.footer-grid{
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-  padding:24px 0;
+/* Menu section updates */
+#menu .section-heading p{
+  max-width: 56ch;
 }
-.footer-brand{
-  font-weight:800;
-  font-size:1.1rem;
-  margin-bottom:6px;
+
+#menu .menu-highlight{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(139,94,60,.08);
+  border: 1px solid rgba(139,94,60,.12);
+  color: var(--brand-dark);
+  font-weight: 800;
+  letter-spacing: .02em;
 }
-.footer-grid p{
-  margin:0;
-  color:var(--muted);
-  max-width:42ch;
+
+#menu .menu-grid{
+  margin-top: 18px;
 }
-.footer-links{
-  display:flex;
-  gap:16px;
-  flex-wrap:wrap;
-  align-content:flex-start;
+
+#menu .menu-card{
+  background: var(--surface);
+  border: 1px solid rgba(36,28,22,.08);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
 }
-.footer-links a{
-  color:var(--muted);
-  font-weight:700;
+
+#menu .menu-card h3{
+  margin: 0 0 8px;
+  padding-right: 64px;
+  font-size: 1.18rem;
 }
-.footer-bottom{
-  border-top:1px solid rgba(36,28,22,.06);
-  padding:14px 0;
-  color:var(--muted);
-  font-size:.92rem;
+
+#menu .menu-card p{
+  margin: 0 0 14px;
+  color: var(--muted);
+}
+
+#menu .menu-price{
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(139,94,60,.10);
+  color: var(--brand-dark);
+  font-weight: 800;
+  border: 1px solid rgba(139,94,60,.14);
+  padding: 8px 10px;
+  border-radius: 999px;
+}
+
+#menu .menu-meta{
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+#menu .menu-meta span{
+  background: var(--surface-2);
+  border: 1px solid rgba(36,28,22,.06);
+  color: var(--brand-dark);
+  padding: 8px 10px;
+  border-radius: 999px;
+  font-size: .84rem;
+  font-weight: 700;
+}
+
+#menu .menu-cta{
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+@media (max-width: 560px){
+  #menu .menu-cta .btn{
+    width: 100%;
+  }
 }
 
 .floating-whatsapp{
