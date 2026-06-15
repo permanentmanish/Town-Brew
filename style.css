@@ -756,6 +756,136 @@ button,input,textarea,select{font:inherit}
   border-top:1px solid rgba(36,28,22,.08);
   background:rgba(255,255,255,.56);
 }
+
+.footer-grid{
+  display:grid;
+  gap:22px;
+  padding:28px 0 24px;
+}
+
+.footer-brand-block,
+.footer-links-block,
+.footer-note-block{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.footer-brand{
+  font-weight:800;
+  font-size:1.15rem;
+  line-height:1.2;
+}
+
+.footer-brand-block p,
+.footer-note-block p{
+  margin:0;
+  color:var(--muted);
+  line-height:1.6;
+}
+
+.footer-label,
+.footer-title{
+  color:var(--brand-dark);
+  font-size:.78rem;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+}
+
+.footer-hours,
+.footer-contact{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  padding:14px 16px;
+  border-radius:18px;
+  background:var(--surface-2);
+  border:1px solid rgba(36,28,22,.06);
+}
+
+.footer-hours strong,
+.footer-contact a{
+  font-weight:700;
+  color:var(--text);
+}
+
+.footer-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:4px;
+}
+
+.footer-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 16px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.75);
+  color:var(--text);
+  font-weight:700;
+  transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.footer-btn:hover{
+  transform:translateY(-1px);
+}
+
+.footer-btn-primary{
+  background:linear-gradient(135deg, var(--brand), var(--brand-2));
+  color:#fff;
+  border-color:transparent;
+  box-shadow:0 14px 28px rgba(139,94,60,.18);
+}
+
+.footer-links{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:10px 14px;
+}
+
+.footer-links a{
+  color:var(--muted);
+  font-weight:700;
+  padding:8px 0;
+  transition:color .2s ease;
+}
+
+.footer-links a:hover{
+  color:var(--text);
+}
+
+.footer-divider{
+  height:1px;
+  background:rgba(36,28,22,.08);
+}
+
+@media (min-width: 760px){
+  .footer-grid{
+    grid-template-columns:1.2fr .9fr .9fr;
+    align-items:start;
+  }
+
+  .footer-links{
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 759px){
+  .footer-actions .footer-btn{
+    width:100%;
+  }
+}
+
+.footer-btn:focus-visible,
+.footer-links a:focus-visible,
+.footer-contact a:focus-visible{
+  outline:3px solid var(--brand);
+  outline-offset:3px;
+}
 /* Menu section updates */
 #menu .section-heading p{
   max-width: 56ch;
