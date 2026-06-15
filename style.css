@@ -841,6 +841,91 @@ button,input,textarea,select{font:inherit}
   }
 }
 
+/* Add these CSS rules at the end of style.css */
+
+#full-menu{
+  scroll-margin-top:96px;
+}
+
+#full-menu .section-heading p{
+  max-width:64ch;
+}
+
+#full-menu .full-menu-grid{
+  display:grid;
+  gap:14px;
+}
+
+#full-menu .menu-category{
+  background:rgba(255,255,255,.72);
+  border:1px solid rgba(36,28,22,.08);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow-soft);
+  padding:20px;
+}
+
+#full-menu .menu-category h3{
+  margin:0 0 12px;
+  font-size:1.15rem;
+  color:var(--text);
+}
+
+#full-menu .menu-list{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+#full-menu .menu-row{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:12px;
+  align-items:center;
+  padding:12px 0;
+  border-bottom:1px solid rgba(36,28,22,.08);
+}
+
+#full-menu .menu-row:last-child{
+  border-bottom:0;
+  padding-bottom:0;
+}
+
+#full-menu .menu-row span{
+  color:var(--text);
+  font-weight:600;
+  line-height:1.35;
+}
+
+#full-menu .menu-row strong{
+  color:var(--brand-dark);
+  font-weight:800;
+  white-space:nowrap;
+  text-align:right;
+}
+
+@media (min-width: 700px){
+  #full-menu .full-menu-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
+@media (min-width: 1080px){
+  #full-menu .full-menu-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+}
+
+@media (max-width: 560px){
+  #full-menu .menu-category{
+    padding:18px;
+  }
+
+  #full-menu .menu-row{
+    grid-template-columns:1fr auto;
+    gap:10px;
+  }
+}
+
 .floating-whatsapp{
   position:fixed;
   right:16px;
