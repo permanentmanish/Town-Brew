@@ -926,6 +926,73 @@ button,input,textarea,select{font:inherit}
   }
 }
 
+#reviews .section-heading p{
+  max-width: 64ch;
+}
+
+#reviews .review-grid{
+  display: grid;
+  gap: 14px;
+}
+
+#reviews .review-card{
+  background: rgba(255,255,255,.72);
+  border: 1px solid rgba(36,28,22,.08);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#reviews .review-stars{
+  color: #c28a16;
+  letter-spacing: .08em;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+#reviews .review-card p{
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+#reviews .review-name{
+  display: block;
+  color: var(--brand-dark);
+  font-weight: 800;
+  font-size: .98rem;
+  margin-top: auto;
+}
+
+#reviews .review-trust-line{
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: .95rem;
+  text-align: center;
+}
+
+@media (min-width: 560px){
+  #reviews .review-grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 860px){
+  #reviews .review-grid{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px){
+  #reviews .review-card{
+    padding: 18px;
+  }
+}
+
 .floating-whatsapp{
   position:fixed;
   right:16px;
