@@ -886,6 +886,74 @@ button,input,textarea,select{font:inherit}
   outline:3px solid var(--brand);
   outline-offset:3px;
 }
+
+.visit-us{
+  padding:64px 0;
+}
+
+.visit-us .section-heading p{
+  max-width:64ch;
+}
+
+.visit-grid{
+  display:grid;
+  gap:14px;
+}
+
+.visit-card{
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+  padding:20px;
+  background:rgba(255,255,255,.72);
+  border:1px solid rgba(36,28,22,.08);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow-soft);
+}
+
+.visit-icon{
+  width:38px;
+  height:38px;
+  flex:0 0 38px;
+  display:grid;
+  place-items:center;
+  border-radius:999px;
+  background:rgba(139,94,60,.10);
+  color:var(--brand-dark);
+  font-weight:900;
+  line-height:1;
+}
+
+.visit-card h3{
+  margin:0 0 6px;
+  font-size:1.08rem;
+  line-height:1.25;
+}
+
+.visit-card p{
+  margin:0;
+  color:var(--muted);
+}
+
+.visit-note{
+  margin:18px 0 0;
+  color:var(--muted);
+  text-align:center;
+  font-size:.96rem;
+}
+
+@media (min-width: 700px){
+  .visit-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
+@media (max-width: 560px){
+  .visit-card{
+    padding:18px;
+  }
+}
+
 /* Menu section updates */
 #menu .section-heading p{
   max-width: 56ch;
