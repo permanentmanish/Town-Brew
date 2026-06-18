@@ -1,6 +1,6 @@
-:root{
-  --bg:#fbf7f2;
-  --surface:#ffffff;
+.footer-btn:focus-visible{
+...
+};
   --surface-2:#f4ede4;
   --surface-3:#efe5d7;
   --text:#241c16;
@@ -885,6 +885,51 @@ button,input,textarea,select{font:inherit}
 .footer-contact a:focus-visible{
   outline:3px solid var(--brand);
   outline-offset:3px;
+}
+
+/* Navbar Home link */
+
+.site-nav a.nav-home{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+}
+
+.site-nav a.nav-home span{
+  font-size:1.05rem;
+  line-height:1;
+}
+
+/* Hero heading update */
+
+.hero-welcome{
+  display:block;
+  margin-bottom:12px;
+  color:var(--brand-dark);
+  font-family:Inter,system-ui,sans-serif;
+  font-size:.34em;
+  line-height:1.2;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  font-weight:800;
+}
+
+.hero h1{
+  max-width:12ch;
+  line-height:.98;
+}
+
+@media (max-width:560px){
+
+  .hero h1{
+    max-width:none;
+  }
+
+  .hero-welcome{
+    font-size:.28em;
+    margin-bottom:10px;
+  }
+
 }
 
 .visit-us{
