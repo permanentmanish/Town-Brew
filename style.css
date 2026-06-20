@@ -1300,3 +1300,25 @@ button,input,textarea,select{font:inherit}
     width:100%;
   }
 }
+.site-nav a.nav-home{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+}
+
+.site-nav a.nav-home span{
+  font-size:1.05rem;
+  line-height:1;
+}
+
+.hero-welcome{
+  display:block;
+  margin-bottom:12px;
+  color:var(--brand-dark);
+  font-family:Inter,system-ui,sans-serif;
+  font-size:.34em;
+  line-height:1.2;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  font-weight:800;
+}
