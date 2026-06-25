@@ -1,50 +1,97 @@
+// =========================
+// DOM ELEMENTS
+// =========================
+
 const header = document.getElementById('siteHeader');
 const menuToggle = document.getElementById('menuToggle');
 const siteNav = document.getElementById('siteNav');
 const navActions = document.querySelector('.nav-actions');
 const navLinks = [...document.querySelectorAll('.site-nav a')];
 
+// =========================
+// CONTACT SETTINGS
+// =========================
+
 const phoneNumber = '911234567890';
+
 const waMessage = encodeURIComponent(
   'Hi Town Brew Cafe, I want to know about the menu and visiting today.'
 );
+
 const waUrl = `https://wa.me/${phoneNumber}?text=${waMessage}`;
 
+// WhatsApp links
 document.querySelectorAll('[data-wa-link]').forEach((el) => {
   el.href = waUrl;
 });
 
+// Phone links
 document.querySelectorAll('[data-phone-link]').forEach((el) => {
   el.href = `tel:+${phoneNumber}`;
 });
+
+// =========================
+// MOBILE MENU
+// =========================
 
 const setMenuState = (open) => {
   if (!menuToggle || !siteNav) return;
 
   menuToggle.setAttribute('aria-expanded', String(open));
-  menuToggle.classList.toggle('open', open);
 
+  menuToggle.classList.toggle('open', open);
   siteNav.classList.toggle('open', open);
   navActions?.classList.toggle('open', open);
+
+  // Accessibility focus management
+  if (open) {
+    navLinks[0]?.focus();
+  } else {
+    menuToggle.focus();
+  }
 };
 
+// Toggle menu
 menuToggle?.addEventListener('click', () => {
-  const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+  const isOpen =
+    menuToggle.getAttribute('aria-expanded') === 'true';
+
   setMenuState(!isOpen);
 });
 
+// Close menu after clicking nav link
 navLinks.forEach((link) => {
-  link.addEventListener('click', () => setMenuState(false));
+  link.addEventListener('click', () => {
+    setMenuState(false);
+  });
 });
 
+// Close menu on outside click
 document.addEventListener('click', (e) => {
-  if (header && !header.contains(e.target) && siteNav?.classList.contains('open')) {
+  if (
+    header &&
+    !header.contains(e.target) &&
+    siteNav?.classList.contains('open')
+  ) {
     setMenuState(false);
   }
 });
 
+// Close menu with ESC key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    setMenuState(false);
+  }
+});
+
+// =========================
+// ACTIVE NAVIGATION
+// =========================
+
 const sections = navLinks
-  .map((link) => document.querySelector(link.getAttribute('href')))
+  .map((link) =>
+    document.querySelector(link.getAttribute('href'))
+  )
   .filter(Boolean);
 
 if ('IntersectionObserver' in window && sections.length) {
@@ -54,6 +101,7 @@ if ('IntersectionObserver' in window && sections.length) {
         if (!entry.isIntersecting) return;
 
         const id = entry.target.id;
+
         navLinks.forEach((link) => {
           link.classList.toggle(
             'active',
@@ -68,29 +116,60 @@ if ('IntersectionObserver' in window && sections.length) {
     }
   );
 
-  sections.forEach((section) => observer.observe(section));
+  sections.forEach((section) => {
+    observer.observe(section);
+  });
 }
+
+// =========================
+// HEADER SCROLL EFFECT
+// =========================
 
 window.addEventListener(
   'scroll',
   () => {
-    header?.classList.toggle('scrolled', window.scrollY > 10);
+    header?.classList.toggle(
+      'scrolled',
+      window.scrollY > 10
+    );
   },
   { passive: true }
 );
 
+// =========================
+// SMOOTH SCROLL
+// =========================
+
+const prefersReducedMotion =
+  window.matchMedia(
+    '(prefers-reduced-motion: reduce)'
+  ).matches;
+
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener('click', (e) => {
-    const target = document.querySelector(anchor.getAttribute('href'));
+    const href = anchor.getAttribute('href');
+
+    if (!href || href === '#') return;
+
+    const target = document.querySelector(href);
+
     if (!target) return;
 
     e.preventDefault();
-    const offset = 82;
-    const top = target.getBoundingClientRect().top + window.scrollY - offset;
-    window.scrollTo({ top, behavior: 'smooth' });
-  });
-});
 
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') setMenuState(false);
+    // Header height offset
+    const offset = 82;
+
+    const top =
+      target.getBoundingClientRect().top +
+      window.scrollY -
+      offset;
+
+    window.scrollTo({
+      top,
+      behavior: prefersReducedMotion
+        ? 'auto'
+        : 'smooth',
+    });
+  });
 });
