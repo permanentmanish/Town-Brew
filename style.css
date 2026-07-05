@@ -633,44 +633,21 @@ button,input,textarea,select{font:inherit}
   object-fit: cover;
 }
 
+.gallery-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.1), rgba(0,0,0,0.6));
+  z-index: 1;
+}
+.gallery-content {
+  position: absolute;
+  bottom: 16px; left: 16px;
+  color: #fff; z-index: 2;
+}
 
 /* Updated Gallery Imagery Hooks */
-.g1{
-  background:
-    linear-gradient(180deg, rgba(22,12,8,.05), rgba(22,12,8,.50)),
-    url('https://images.unsplash.com/photo-1561336313-0bd5e0b27ec8?auto=format&fit=crop&w=600&q=80') center/cover no-repeat,
-    linear-gradient(135deg, #8b5e3c, #c38a61);
-}
-.g2{
-  background:
-    linear-gradient(180deg, rgba(22,12,8,.05), rgba(22,12,8,.50)),
-    url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80') center/cover no-repeat,
-    linear-gradient(135deg, #1e3a2f, #516d5d);
-}
-.g3{
-  background:
-    linear-gradient(180deg, rgba(22,12,8,.05), rgba(22,12,8,.50)),
-    url('https://images.unsplash.com/photo-1541532713592-79a0317b6b77?auto=format&fit=crop&w=600&q=80') center/cover no-repeat,
-    linear-gradient(135deg, #6d452b, #b67b50);
-}
-.g4{
-  background:
-    linear-gradient(180deg, rgba(22,12,8,.05), rgba(22,12,8,.50)),
-    url('https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=600&q=80') center/cover no-repeat,
-    linear-gradient(135deg, #2d2a27, #67584b);
-}
-.g5{
-  background:
-    linear-gradient(180deg, rgba(22,12,8,.05), rgba(22,12,8,.50)),
-    url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=600&q=80') center/cover no-repeat,
-    linear-gradient(135deg, #8b5e3c, #a89a84);
-}
-.g6{
-  background:
-    linear-gradient(180deg, rgba(22,12,8,.05), rgba(22,12,8,.50)),
-    url('https://images.unsplash.com/photo-1461023058043-033481440af1?auto=format&fit=crop&w=600&q=80') center/cover no-repeat,
-    linear-gradient(135deg, #1e3a2f, #8b5e3c);
-}
+
 
 .contact-grid{
   align-items:stretch;
