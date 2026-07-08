@@ -215,9 +215,10 @@ button,input,textarea,select{font:inherit}
   padding:34px 0 18px;
 }
 .hero-grid{
-  display:grid;
-  gap:22px;
-  align-items:stretch;
+    display:grid;
+    grid-template-columns:58% 42%;
+    gap:22px;
+    align-items:stretch;
 }
 .hero-copy,
 .hero-card,
@@ -1208,7 +1209,7 @@ button,input,textarea,select{font:inherit}
 
 @media (min-width: 860px){
   .hero{padding:44px 0 24px}
-  .hero-grid{grid-template-columns:1.08fr .92fr; gap:22px}
+  .hero-grid{grid-template-columns:1.16fr .84fr; gap:22px}
   .section-grid{grid-template-columns:1fr 1fr; align-items:center}
   .menu-grid{grid-template-columns:repeat(3,1fr)}
   .why-grid{grid-template-columns:repeat(3,1fr)}
