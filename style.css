@@ -216,7 +216,7 @@ button,input,textarea,select{font:inherit}
 }
 .hero-grid{
     display:grid;
-    grid-template-columns:58% 42%;
+    grid-template-columns:1.16fr .84fr;
     gap:22px;
     align-items:stretch;
 }
