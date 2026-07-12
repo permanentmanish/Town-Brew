@@ -212,129 +212,184 @@ button,input,textarea,select{font:inherit}
 }
 
 /* ==========================================================================
-   UPDATED HERO SECTION CSS
-   Replace the existing .hero CSS blocks in your style.css with this code.
-  [cite: 1]
+   UPDATED HERO SECTION CSS (VISUAL POLISH)
+   Replace your existing .hero CSS blocks in style.css with this code.
    ========================================================================== */
 
-/* IMPROVEMENT: Reduced base top/bottom padding on mobile to pull the visual content higher into the viewport. */
+/* Spacing and Layout Grid (Maintained exactly as requested) */
 .hero {
   padding: 24px 0 16px;
+  position: relative;
 }
 
-/* IMPROVEMENT: `align-items: stretch` ensures both the left copy and right card share the exact same height on desktop/tablet. */
 .hero-grid {
   display: grid;
   gap: 20px;
   align-items: stretch; 
 }
 
-/* IMPROVEMENT: Converted content blocks into flex columns. This lets us use `gap` instead of scattered margins, eliminating dead whitespace. */
+/* 
+   PREMIUM CARD DESIGN
+   Added glass-like backdrop, pristine white borders, and layered soft shadows 
+   to create a sense of depth and luxury without feeling heavy. 
+*/
 .hero-copy,
 .hero-card {
-  background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(36, 28, 22, 0.08);
-  box-shadow: var(--shadow);
-  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 1);
+  box-shadow: 0 32px 64px -16px rgba(36, 28, 22, 0.08), 
+              0 4px 12px rgba(36, 28, 22, 0.02);
+  border-radius: 32px; /* Increased from default for a more modern, welcoming feel */
   display: flex;
   flex-direction: column;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
 }
 
+/* Subtle elevation on hover for the main containers */
+@media (min-width: 1024px) {
+  .hero-copy:hover,
+  .hero-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 40px 72px -16px rgba(36, 28, 22, 0.12), 
+                0 6px 16px rgba(36, 28, 22, 0.03);
+  }
+}
+
+/* --- LEFT COLUMN: TYPOGRAPHY & SPACING --- */
 .hero-copy {
-  padding: 28px 20px;
-  gap: 18px; /* Centralized spacing control */
-  justify-content: center; /* Vertically centers the text nicely when stretched */
+  padding: 32px 24px;
+  gap: 22px; /* Improved visual rhythm */
+  justify-content: center; 
 }
 
-/* IMPROVEMENT: Stripping default margins to ensure perfect editorial spacing via flex gap */
 .hero-copy > * {
   margin: 0; 
 }
 
 .hero-copy .eyebrow {
   margin-bottom: 0;
+  color: var(--brand); /* Slightly softer brand color for the eyebrow */
 }
 
-/* IMPROVEMENT: Tighter line-height and optimized max-width for premium editorial readability */
 .hero h1 {
   font-family: "Playfair Display", Georgia, serif;
   line-height: 1.05;
-  letter-spacing: -0.03em;
-  font-size: clamp(2.4rem, 6.5vw, 4.5rem);
+  letter-spacing: -0.035em; /* Tighter tracking for premium editorial look */
+  font-size: clamp(2.6rem, 6.5vw, 4.6rem); /* Refined scaling */
   max-width: 14ch;
   color: var(--text);
 }
 
 .hero-welcome {
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   color: var(--brand-dark);
   font-family: Inter, system-ui, sans-serif;
   font-size: 0.32em;
   line-height: 1.2;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   font-weight: 800;
+  opacity: 0.9;
 }
 
 .hero-lead {
-  font-size: 1.05rem;
+  font-size: 1.1rem; /* Slightly larger for readability */
   color: var(--muted);
-  line-height: 1.6;
-  max-width: 52ch;
+  line-height: 1.65;
+  max-width: 48ch; /* Narrowed width for optimal reading measure */
 }
 
-/* IMPROVEMENT: Refined trust chips and location bar to take less vertical space on mobile, reducing user scroll fatigue. */
+/* Premium pills and chips */
 .hero-location {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 14px;
-  border-radius: 12px;
-  background: rgba(139, 94, 60, 0.06);
-  border: 1px solid rgba(139, 94, 60, 0.12);
+  gap: 10px;
+  padding: 12px 18px;
+  border-radius: 100px; /* Perfect pill shape */
+  background: rgba(139, 94, 60, 0.04);
+  border: 1px solid rgba(139, 94, 60, 0.1);
   color: var(--brand-dark);
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   flex-wrap: wrap;
 }
 
+/* Refined Buttons with softer shadows and smoother transitions */
 .hero-actions {
   display: flex;
-  gap: 12px;
+  gap: 14px;
   flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.hero-actions .btn {
+  border-radius: 100px;
+  padding: 14px 28px;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+
+.hero-actions .btn-primary {
+  box-shadow: 0 12px 24px -6px rgba(139, 94, 60, 0.25);
+}
+
+.hero-actions .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px -6px rgba(139, 94, 60, 0.35);
+}
+
+.hero-actions .btn-secondary {
+  background: var(--surface);
+  border-color: rgba(36, 28, 22, 0.1);
+  box-shadow: 0 4px 12px rgba(36, 28, 22, 0.03);
+}
+
+.hero-actions .btn-secondary:hover {
+  background: #ffffff;
+  border-color: rgba(36, 28, 22, 0.15);
+  box-shadow: 0 8px 16px rgba(36, 28, 22, 0.06);
 }
 
 .hero-trust {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
 }
 
 .trust-pill {
-  padding: 6px 12px;
-  border-radius: 999px;
-  background: rgba(139, 94, 60, 0.05);
-  color: var(--brand-dark);
-  border: 1px solid rgba(139, 94, 60, 0.1);
+  padding: 8px 14px;
+  border-radius: 100px;
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid rgba(36, 28, 22, 0.1);
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
+  transition: all 0.2s ease;
 }
 
-/* Right Card Internal Layout */
+.trust-pill:hover {
+  background: rgba(139, 94, 60, 0.04);
+  color: var(--brand-dark);
+  border-color: rgba(139, 94, 60, 0.15);
+}
+
+/* --- RIGHT COLUMN: VISUAL COMPOSITION --- */
 .hero-card {
-  padding: 16px;
-  gap: 16px;
+  padding: 20px;
+  gap: 18px;
 }
 
 .hero-card-top {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   font-size: 0.9rem;
   font-weight: 800;
   color: var(--brand-dark);
-  padding: 0 4px;
+  padding: 4px 8px 0;
 }
 
 .status-dot {
@@ -342,103 +397,153 @@ button,input,textarea,select{font:inherit}
   height: 10px;
   border-radius: 50%;
   background: #27c36a;
-  box-shadow: 0 0 0 6px rgba(39, 195, 106, 0.12);
+  box-shadow: 0 0 0 4px rgba(39, 195, 106, 0.15);
+  position: relative;
 }
 
-/* IMPROVEMENT: Added `flex: 1` to force the visual grid to expand to the bottom naturally, ensuring equal height with the left column without hardcoding pixel values. */
+/* Optional subtle pulse for the open status dot */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(39, 195, 106, 0.4); }
+  70% { box-shadow: 0 0 0 8px rgba(39, 195, 106, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(39, 195, 106, 0); }
+}
+.status-dot { animation: pulse 2s infinite; }
+
 .hero-visual {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
+  gap: 14px;
   flex: 1; 
   min-height: 280px; 
 }
 
+/* 
+   IMAGE ANIMATION & COMPOSITION
+   Using pseudo-elements for backgrounds allows a smooth, premium zoom effect
+   on hover without scaling the text or causing jitter.
+*/
 .hero-panel-1,
 .hero-panel-2,
 .hero-panel-3 {
-  border-radius: 16px;
-  padding: 16px;
+  border-radius: 20px; /* Refined inner curve */
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   color: #fff;
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
+  box-shadow: 0 12px 24px -8px rgba(36, 28, 22, 0.15);
 }
 
-/* IMPROVEMENT: Panel 1 stretches full width. This acts as a stronger anchor, making the card feel premium and visually robust without altering the 42% overall width constraint. */
-.hero-panel-1 {
-  grid-column: 1 / -1;
-  background: linear-gradient(180deg, rgba(22,12,8,.14), rgba(22,12,8,.58)), url('https://images.unsplash.com/photo-1559525839-b184a4d698c7?auto=format&fit=crop&w=800&q=80') center/cover no-repeat, linear-gradient(135deg, #6d452b, #b67b50);
+.hero-panel-1::before,
+.hero-panel-2::before,
+.hero-panel-3::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); /* Silky smooth zoom */
 }
-.hero-panel-2 {
-  background: linear-gradient(180deg, rgba(22,12,8,.12), rgba(22,12,8,.58)), url('https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80') center/cover no-repeat, linear-gradient(135deg, #1e3a2f, #516d5d);
+
+/* Hover Zoom Effect */
+.hero-panel-1:hover::before,
+.hero-panel-2:hover::before,
+.hero-panel-3:hover::before {
+  transform: scale(1.06);
 }
-.hero-panel-3 {
-  background: linear-gradient(180deg, rgba(22,12,8,.12), rgba(22,12,8,.58)), url('https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=600&q=80') center/cover no-repeat, linear-gradient(135deg, #8b5e3c, #c38a61);
+
+/* Ensure text stays above the background */
+.hero-label, 
+.hero-visual strong {
+  position: relative;
+  z-index: 1;
+}
+
+/* REAL PROJECT IMAGES + PREMIUM GRADIENT OVERLAYS */
+.hero-panel-1 { grid-column: 1 / -1; }
+.hero-panel-1::before {
+  background: linear-gradient(180deg, rgba(22,12,8,0) 40%, rgba(22,12,8,0.8) 100%), 
+              url('images/gallery/interior-1.jpg') center/cover no-repeat;
+}
+
+.hero-panel-2::before {
+  background: linear-gradient(180deg, rgba(22,12,8,0) 30%, rgba(22,12,8,0.85) 100%), 
+              url('images/gallery/hot-coffee.jpg') center/cover no-repeat;
+}
+
+.hero-panel-3::before {
+  background: linear-gradient(180deg, rgba(22,12,8,0) 30%, rgba(22,12,8,0.85) 100%), 
+              url('images/gallery/veg-sandwich.jpg') center/cover no-repeat;
 }
 
 .hero-label {
-  font-size: 0.78rem;
-  letter-spacing: 0.14em;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  opacity: 0.92;
-  margin-bottom: 6px;
+  opacity: 0.9;
+  margin-bottom: 4px;
   font-weight: 800;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Preserves contrast against light parts of images */
 }
 
 .hero-visual strong {
-  font-size: 1.08rem;
+  font-size: 1.15rem;
   line-height: 1.25;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.4);
 }
 
 .hero-card-bottom {
-  padding: 8px 4px 4px;
+  padding: 12px 8px 4px;
 }
 
 .mini-title {
-  margin: 0 0 10px;
+  margin: 0 0 12px;
   color: var(--muted);
-  font-weight: 700;
-  font-size: 0.85rem;
+  font-weight: 800;
+  font-size: 0.8rem;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
 }
 
+/* Polished Mini Tags for a cleaner, high-end look */
 .mini-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .mini-tags span {
-  padding: 8px 12px;
-  background: rgba(244, 237, 228, 0.95);
+  padding: 8px 14px;
+  background: #ffffff;
   border: 1px solid rgba(36, 28, 22, 0.08);
-  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(36, 28, 22, 0.03);
+  border-radius: 100px;
   color: var(--text);
   font-weight: 700;
   font-size: 0.85rem;
 }
 
 /* ==========================================================================
-   RESPONSIVE HERO LAYOUT
+   RESPONSIVE HERO LAYOUT (Maintaining existing constraints perfectly)
    ========================================================================== */
 
 /* Mobile Enhancements */
 @media (max-width: 560px) {
   .hero-actions .btn {
     width: 100%;
-    padding: 12px;
+    padding: 14px;
   }
   .hero h1 {
     max-width: none;
   }
+  .hero-copy, .hero-card {
+    border-radius: 24px; /* Slightly tighter on mobile to maximize space */
+  }
 }
 
-/* Tablet: Balanced side-by-side layout with equal spacing */
+/* Tablet Layout */
 @media (min-width: 768px) {
   .hero {
     padding: 32px 0 24px;
@@ -448,31 +553,30 @@ button,input,textarea,select{font:inherit}
     gap: 20px;
   }
   .hero-copy {
-    padding: 36px 32px;
-    gap: 20px;
+    padding: 40px 32px;
+    gap: 24px;
   }
   .hero-card {
-    padding: 20px;
+    padding: 24px;
   }
 }
 
-/* Desktop: Premium Editorial 58/42 layout */
+/* Desktop Premium Layout (58/42 constraint strictly maintained) */
 @media (min-width: 1024px) {
   .hero {
     padding: 48px 0 32px;
   }
   .hero-grid {
-    /* IMPROVEMENT: Exactly applied the requested 58% / 42% split. */
     grid-template-columns: 58fr 42fr;
-    gap: 24px;
+    gap: 28px; /* Slightly increased gap for luxurious whitespace between columns */
   }
   .hero-copy {
-    padding: 48px 40px; /* Generous breathing room */
-    gap: 24px;
+    padding: 56px 48px; /* Generous breathing room */
+    gap: 28px;
   }
   .hero-card {
-    padding: 24px;
-    gap: 20px;
+    padding: 28px;
+    gap: 24px;
   }
   .hero-visual {
     gap: 16px;
@@ -480,11 +584,11 @@ button,input,textarea,select{font:inherit}
   .hero-panel-1,
   .hero-panel-2,
   .hero-panel-3 {
-    padding: 20px;
-    border-radius: 20px;
+    padding: 24px;
+    border-radius: 24px;
   }
   .hero-panel-1 {
-    min-height: 220px; /* Increases top image presence further on large screens */
+    min-height: 240px; 
   }
 }
 
