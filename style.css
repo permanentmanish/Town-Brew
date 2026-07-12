@@ -211,204 +211,281 @@ button,input,textarea,select{font:inherit}
   outline-offset:3px;
 }
 
-.hero{
-  padding:34px 0 18px;
+/* ==========================================================================
+   UPDATED HERO SECTION CSS
+   Replace the existing .hero CSS blocks in your style.css with this code.
+  [cite: 1]
+   ========================================================================== */
+
+/* IMPROVEMENT: Reduced base top/bottom padding on mobile to pull the visual content higher into the viewport. */
+.hero {
+  padding: 24px 0 16px;
 }
-.hero-grid{
-  display:grid;
-  gap:22px;
-  align-items:stretch;
+
+/* IMPROVEMENT: `align-items: stretch` ensures both the left copy and right card share the exact same height on desktop/tablet. */
+.hero-grid {
+  display: grid;
+  gap: 20px;
+  align-items: stretch; 
 }
+
+/* IMPROVEMENT: Converted content blocks into flex columns. This lets us use `gap` instead of scattered margins, eliminating dead whitespace. */
 .hero-copy,
-.hero-card,
-.contact-panel,
-.map-panel,
-.section-copy{
-  background:rgba(255,255,255,.72);
-  border:1px solid rgba(36,28,22,.08);
-  box-shadow:var(--shadow);
-  border-radius:var(--radius);
-}
-.hero-copy{
-  padding:24px 20px;
-}
-.eyebrow,
-.section-kicker{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  font-size:.82rem;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:var(--brand-dark);
-  font-weight:800;
-}
-.eyebrow::before,
-.section-kicker::before{
-  content:"";
-  width:10px;
-  height:10px;
-  border-radius:999px;
-  background:linear-gradient(135deg, var(--brand), var(--brand-2));
-  box-shadow:0 0 0 6px rgba(139,94,60,.10);
+.hero-card {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(36, 28, 22, 0.08);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
 }
 
-.hero h1,
-.section-heading h2,
-.section-copy h2,
-.contact-panel h2{
-  font-family:"Playfair Display", Georgia, serif;
-  line-height:1.02;
-  letter-spacing:-.03em;
-  margin:14px 0 12px;
-}
-.hero h1{font-size:clamp(2.6rem, 7vw, 5.2rem); max-width:12ch}
-.section-heading h2,
-.section-copy h2,
-.contact-panel h2{font-size:clamp(2rem, 5vw, 3.2rem); max-width:14ch}
-
-.hero-lead,
-.section-heading p,
-.section-copy p,
-.review-card p,
-.why-card p,
-.menu-card p,
-.contact-panel p{
-  color:var(--muted);
-}
-.hero-lead{
-  font-size:1.02rem;
-  max-width:60ch;
-  margin:0;
-}
-.hero-location{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  margin-top:18px;
-  padding:12px 14px;
-  border-radius:16px;
-  background:rgba(139,94,60,.08);
-  border:1px solid rgba(139,94,60,.12);
-  color:var(--brand-dark);
-  font-weight:700;
-  flex-wrap:wrap;
-}
-.hero-actions{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top:22px;
-}
-.hero-trust{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-top:18px;
-}
-.trust-pill{
-  padding:10px 14px;
-  border-radius:999px;
-  background:rgba(139,94,60,.08);
-  color:var(--brand-dark);
-  border:1px solid rgba(139,94,60,.12);
-  font-weight:700;
-  font-size:.9rem;
+.hero-copy {
+  padding: 28px 20px;
+  gap: 18px; /* Centralized spacing control */
+  justify-content: center; /* Vertically centers the text nicely when stretched */
 }
 
-.hero-card{
-  padding:14px;
-}
-.hero-card-top{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  font-size:.9rem;
-  font-weight:800;
-  color:var(--brand-dark);
-  padding:6px 6px 14px;
-}
-.status-dot{
-  width:10px;
-  height:10px;
-  border-radius:50%;
-  background:#27c36a;
-  box-shadow:0 0 0 6px rgba(39,195,106,.12);
+/* IMPROVEMENT: Stripping default margins to ensure perfect editorial spacing via flex gap */
+.hero-copy > * {
+  margin: 0; 
 }
 
-.hero-visual{
-  display:grid;
-  grid-template-columns:repeat(2, 1fr);
-  gap:12px;
+.hero-copy .eyebrow {
+  margin-bottom: 0;
 }
+
+/* IMPROVEMENT: Tighter line-height and optimized max-width for premium editorial readability */
+.hero h1 {
+  font-family: "Playfair Display", Georgia, serif;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  font-size: clamp(2.4rem, 6.5vw, 4.5rem);
+  max-width: 14ch;
+  color: var(--text);
+}
+
+.hero-welcome {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--brand-dark);
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 0.32em;
+  line-height: 1.2;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.hero-lead {
+  font-size: 1.05rem;
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: 52ch;
+}
+
+/* IMPROVEMENT: Refined trust chips and location bar to take less vertical space on mobile, reducing user scroll fatigue. */
+.hero-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: rgba(139, 94, 60, 0.06);
+  border: 1px solid rgba(139, 94, 60, 0.12);
+  color: var(--brand-dark);
+  font-weight: 700;
+  font-size: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.hero-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.trust-pill {
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(139, 94, 60, 0.05);
+  color: var(--brand-dark);
+  border: 1px solid rgba(139, 94, 60, 0.1);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+/* Right Card Internal Layout */
+.hero-card {
+  padding: 16px;
+  gap: 16px;
+}
+
+.hero-card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--brand-dark);
+  padding: 0 4px;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #27c36a;
+  box-shadow: 0 0 0 6px rgba(39, 195, 106, 0.12);
+}
+
+/* IMPROVEMENT: Added `flex: 1` to force the visual grid to expand to the bottom naturally, ensuring equal height with the left column without hardcoding pixel values. */
+.hero-visual {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  flex: 1; 
+  min-height: 280px; 
+}
+
 .hero-panel-1,
 .hero-panel-2,
-.hero-panel-3{
-  border-radius:20px;
-  min-height:160px;
-  padding:16px;
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
-  color:#fff;
-  overflow:hidden;
-  position:relative;
+.hero-panel-3 {
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: #fff;
+  overflow: hidden;
+  position: relative;
 }
 
-.hero-panel-1{
-  grid-column:1 / -1;
-  background:
-    linear-gradient(180deg, rgba(22,12,8,.14), rgba(22,12,8,.58)),
-    url('https://images.unsplash.com/photo-1559525839-b184a4d698c7?auto=format&fit=crop&w=800&q=80') center/cover no-repeat,
-    linear-gradient(135deg, #6d452b, #b67b50);
+/* IMPROVEMENT: Panel 1 stretches full width. This acts as a stronger anchor, making the card feel premium and visually robust without altering the 42% overall width constraint. */
+.hero-panel-1 {
+  grid-column: 1 / -1;
+  background: linear-gradient(180deg, rgba(22,12,8,.14), rgba(22,12,8,.58)), url('https://images.unsplash.com/photo-1559525839-b184a4d698c7?auto=format&fit=crop&w=800&q=80') center/cover no-repeat, linear-gradient(135deg, #6d452b, #b67b50);
 }
-.hero-panel-2{
-  background:
-    linear-gradient(180deg, rgba(22,12,8,.12), rgba(22,12,8,.58)),
-    url('https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80') center/cover no-repeat,
-    linear-gradient(135deg, #1e3a2f, #516d5d);
+.hero-panel-2 {
+  background: linear-gradient(180deg, rgba(22,12,8,.12), rgba(22,12,8,.58)), url('https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80') center/cover no-repeat, linear-gradient(135deg, #1e3a2f, #516d5d);
 }
-.hero-panel-3{
-  background:
-    linear-gradient(180deg, rgba(22,12,8,.12), rgba(22,12,8,.58)),
-    url('https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=600&q=80') center/cover no-repeat,
-    linear-gradient(135deg, #8b5e3c, #c38a61);
+.hero-panel-3 {
+  background: linear-gradient(180deg, rgba(22,12,8,.12), rgba(22,12,8,.58)), url('https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=600&q=80') center/cover no-repeat, linear-gradient(135deg, #8b5e3c, #c38a61);
 }
 
-.hero-label{
-  font-size:.78rem;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  opacity:.92;
-  margin-bottom:6px;
-  font-weight:800;
+.hero-label {
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.92;
+  margin-bottom: 6px;
+  font-weight: 800;
 }
-.hero-visual strong{font-size:1.08rem; line-height:1.25}
-.hero-card-bottom{
-  padding:16px 6px 6px;
+
+.hero-visual strong {
+  font-size: 1.08rem;
+  line-height: 1.25;
 }
-.mini-title{
-  margin:0 0 10px;
-  color:var(--muted);
-  font-weight:700;
-  font-size:.85rem;
-  text-transform:uppercase;
-  letter-spacing:.12em;
+
+.hero-card-bottom {
+  padding: 8px 4px 4px;
 }
-.mini-tags{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-bottom:16px;
+
+.mini-title {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
 }
-.mini-tags span{
-  padding:10px 12px;
-  background:rgba(244,237,228,.95);
-  border:1px solid rgba(36,28,22,.08);
-  border-radius:14px;
-  color:var(--text);
-  font-weight:700;
-  font-size:.9rem;
+
+.mini-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.mini-tags span {
+  padding: 8px 12px;
+  background: rgba(244, 237, 228, 0.95);
+  border: 1px solid rgba(36, 28, 22, 0.08);
+  border-radius: 12px;
+  color: var(--text);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   RESPONSIVE HERO LAYOUT
+   ========================================================================== */
+
+/* Mobile Enhancements */
+@media (max-width: 560px) {
+  .hero-actions .btn {
+    width: 100%;
+    padding: 12px;
+  }
+  .hero h1 {
+    max-width: none;
+  }
+}
+
+/* Tablet: Balanced side-by-side layout with equal spacing */
+@media (min-width: 768px) {
+  .hero {
+    padding: 32px 0 24px;
+  }
+  .hero-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .hero-copy {
+    padding: 36px 32px;
+    gap: 20px;
+  }
+  .hero-card {
+    padding: 20px;
+  }
+}
+
+/* Desktop: Premium Editorial 58/42 layout */
+@media (min-width: 1024px) {
+  .hero {
+    padding: 48px 0 32px;
+  }
+  .hero-grid {
+    /* IMPROVEMENT: Exactly applied the requested 58% / 42% split. */
+    grid-template-columns: 58fr 42fr;
+    gap: 24px;
+  }
+  .hero-copy {
+    padding: 48px 40px; /* Generous breathing room */
+    gap: 24px;
+  }
+  .hero-card {
+    padding: 24px;
+    gap: 20px;
+  }
+  .hero-visual {
+    gap: 16px;
+  }
+  .hero-panel-1,
+  .hero-panel-2,
+  .hero-panel-3 {
+    padding: 20px;
+    border-radius: 20px;
+  }
+  .hero-panel-1 {
+    min-height: 220px; /* Increases top image presence further on large screens */
+  }
 }
 
 .quick-bar{margin-top:12px}
