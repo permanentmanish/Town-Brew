@@ -1468,3 +1468,36 @@ button,input,textarea,select{font:inherit}
   text-transform:uppercase;
   font-weight:800;
 }
+
+/* ==========================================
+   HERO CTA UPDATE (APPENDED OVERRIDES)
+   ========================================== */
+
+/* Tertiary CTA - Elegant, minimal text style for "Call Now" */
+.btn-tertiary {
+  color: var(--brand-dark);
+  background: transparent;
+  border: 1px solid transparent;
+  font-weight: 700;
+  transition: color 0.25s ease, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 12px 18px;
+}
+
+.btn-tertiary:hover {
+  color: var(--brand-2);
+  background: transparent;
+  transform: translateY(-1px);
+}
+
+.btn-tertiary:focus-visible {
+  outline: 3px solid var(--brand);
+  outline-offset: 3px;
+}
+
+/* Perfect alignment for primary, secondary, and tertiary buttons */
+.hero-actions {
+  display: flex;
+  align-items: center; 
+  gap: 14px;
+  flex-wrap: wrap;
+}
