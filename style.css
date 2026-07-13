@@ -1100,173 +1100,209 @@ button,input,textarea,select{font:inherit}
   }
 }
 
-/* Menu section updates */
-#menu .section-heading p{
-  max-width: 56ch;
+/* ==========================================================================
+   PREMIUM MENU SECTION CSS
+   ========================================================================== */
+
+#menu {
+  background: linear-gradient(180deg, transparent 0%, rgba(139, 94, 60, 0.03) 100%);
+  padding: 80px 0;
 }
 
-#menu .menu-highlight{
+#menu .section-heading {
+  margin-bottom: 40px;
+}
+
+/* Polished high-contrast kicker pill */
+#menu .menu-highlight {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   margin-top: 16px;
-  padding: 10px 14px;
-  border-radius: 999px;
-  background: rgba(139,94,60,.08);
-  border: 1px solid rgba(139,94,60,.12);
+  padding: 10px 18px;
+  border-radius: 100px;
+  background: rgba(139, 94, 60, 0.05);
+  border: 1px solid rgba(139, 94, 60, 0.12);
   color: var(--brand-dark);
   font-weight: 800;
-  letter-spacing: .02em;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
 }
 
-#menu .menu-grid{
-  margin-top: 18px;
+/* Base Mobile Grid Setup */
+#menu .menu-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1fr;
+  margin-top: 32px;
+  align-items: stretch; /* Forces equal card heights */
 }
 
-#menu .menu-card{
-  background: var(--surface);
-  border: 1px solid rgba(36,28,22,.08);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-soft);
-  padding: 20px;
-  position: relative;
+/* Premium Card Architecture */
+#menu .menu-card {
+  background: #ffffff;
+  border: 1px solid rgba(36, 28, 22, 0.06);
+  border-radius: 28px; /* Cohesive with premium page curvature */
+  box-shadow: 0 16px 36px -12px rgba(36, 28, 22, 0.04),
+              0 4px 12px -4px rgba(36, 28, 22, 0.01);
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
+  position: relative;
+  height: 100%;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, box-shadow;
 }
 
-#menu .menu-card h3{
-  margin: 0 0 8px;
-  padding-right: 64px;
-  font-size: 1.18rem;
+/* Elevates card smoothly on hover */
+@media (min-width: 1024px) {
+  #menu .menu-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 32px 50px -16px rgba(36, 28, 22, 0.09),
+                0 8px 20px -8px rgba(36, 28, 22, 0.03);
+  }
 }
 
-#menu .menu-card p{
-  margin: 0 0 14px;
-  color: var(--muted);
+/* Image container utilizing exact aspect-ratio to completely prevent layout shifts (CLS) */
+#menu .menu-image-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--surface-2);
 }
 
-#menu .menu-price{
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  background: rgba(139,94,60,.10);
-  color: var(--brand-dark);
+#menu .menu-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Subtle image expansion interaction on card hover */
+#menu .menu-card:hover .menu-image-wrap img {
+  transform: scale(1.05);
+}
+
+/* Core Content Body Wrapper */
+#menu .menu-card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Align Title and Price on a balanced baseline */
+#menu .menu-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+
+#menu .menu-card h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-family: Inter, system-ui, sans-serif;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+/* Premium currency badge styling */
+#menu .menu-price {
+  font-size: 1.15rem;
   font-weight: 800;
-  border: 1px solid rgba(139,94,60,.14);
-  padding: 8px 10px;
-  border-radius: 999px;
+  color: var(--brand-dark);
+  background: rgba(139, 94, 60, 0.06);
+  border: 1px solid rgba(139, 94, 60, 0.12);
+  padding: 6px 14px;
+  border-radius: 100px;
+  line-height: 1;
+  white-space: nowrap;
 }
 
-#menu .menu-meta{
+/* Supporting description with automatic vertical expansion layout */
+#menu .menu-card p {
+  margin: 0 0 20px 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.6;
+  flex-grow: 1; /* Pushes meta tags down perfectly to keep aligned rows */
+}
+
+/* Premium metadata tags */
+#menu .menu-meta {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
+  margin-top: auto; /* Aligns meta section perfectly along the bottom */
 }
 
-#menu .menu-meta span{
+#menu .menu-meta span {
   background: var(--surface-2);
-  border: 1px solid rgba(36,28,22,.06);
+  border: 1px solid rgba(36, 28, 22, 0.05);
   color: var(--brand-dark);
-  padding: 8px 10px;
-  border-radius: 999px;
-  font-size: .84rem;
+  padding: 6px 12px;
+  border-radius: 100px;
+  font-size: 0.8rem;
   font-weight: 700;
+  transition: background 0.25s ease;
 }
 
-#menu .menu-cta{
+#menu .menu-card:hover .menu-meta span {
+  background: rgba(139, 94, 60, 0.05);
+}
+
+/* Bottom Actions container alignment */
+#menu .menu-cta {
   display: flex;
-  gap: 12px;
+  justify-content: center;
+  gap: 16px;
   flex-wrap: wrap;
-  margin-top: 18px;
+  margin-top: 40px;
 }
 
-@media (max-width: 560px){
-  #menu .menu-cta .btn{
+#menu .menu-cta .btn {
+  padding: 14px 28px;
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   GRID RESPONSIVENESS
+   ========================================================================== */
+
+/* Tablet Breakpoint (2 Columns) */
+@media (min-width: 640px) {
+  #menu .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Large Screens/Desktop Breakpoint (3 Columns) */
+@media (min-width: 1024px) {
+  #menu .menu-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+}
+
+/* Mobile Polish spacing limits */
+@media (max-width: 560px) {
+  #menu {
+    padding: 60px 0;
+  }
+
+  #menu .menu-card-body {
+    padding: 20px;
+  }
+  #menu .menu-cta .btn {
     width: 100%;
-  }
-}
-
-/* Add these CSS rules at the end of style.css */
-
-#full-menu{
-  scroll-margin-top:96px;
-}
-
-#full-menu .section-heading p{
-  max-width:64ch;
-}
-
-#full-menu .full-menu-grid{
-  display:grid;
-  gap:14px;
-}
-
-#full-menu .menu-category{
-  background:rgba(255,255,255,.72);
-  border:1px solid rgba(36,28,22,.08);
-  border-radius:var(--radius);
-  box-shadow:var(--shadow-soft);
-  padding:20px;
-}
-
-#full-menu .menu-category h3{
-  margin:0 0 12px;
-  font-size:1.15rem;
-  color:var(--text);
-}
-
-#full-menu .menu-list{
-  list-style:none;
-  padding:0;
-  margin:0;
-}
-
-#full-menu .menu-row{
-  display:grid;
-  grid-template-columns:minmax(0,1fr) auto;
-  gap:12px;
-  align-items:center;
-  padding:12px 0;
-  border-bottom:1px solid rgba(36,28,22,.08);
-}
-
-#full-menu .menu-row:last-child{
-  border-bottom:0;
-  padding-bottom:0;
-}
-
-#full-menu .menu-row span{
-  color:var(--text);
-  font-weight:600;
-  line-height:1.35;
-}
-
-#full-menu .menu-row strong{
-  color:var(--brand-dark);
-  font-weight:800;
-  white-space:nowrap;
-  text-align:right;
-}
-
-@media (min-width: 700px){
-  #full-menu .full-menu-grid{
-    grid-template-columns:repeat(2,minmax(0,1fr));
-  }
-}
-
-@media (min-width: 1080px){
-  #full-menu .full-menu-grid{
-    grid-template-columns:repeat(3,minmax(0,1fr));
-  }
-}
-
-@media (max-width: 560px){
-  #full-menu .menu-category{
-    padding:18px;
-  }
-
-  #full-menu .menu-row{
-    grid-template-columns:1fr auto;
-    gap:10px;
   }
 }
 
