@@ -78,8 +78,9 @@ document.addEventListener('click', (e) => {
 });
 
 // Close menu with ESC key
+// after/updated
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
+  if (e.key === 'Escape' && siteNav?.classList.contains('open')) {
     setMenuState(false);
   }
 });
