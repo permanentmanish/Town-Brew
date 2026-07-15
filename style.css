@@ -1306,70 +1306,133 @@ button,input,textarea,select{font:inherit}
   }
 }
 
-#reviews .section-heading p{
-  max-width: 64ch;
+/* ==========================================================================
+   PREMIUM REVIEWS SECTION CSS
+   ========================================================================== */
+
+#reviews {
+  padding: 80px 0;
+  background-color: #faf8f5; /* Soft, warm off-white to contrast nicely with the main sections */
 }
 
-#reviews .review-grid{
+#reviews .section-heading {
+  margin-bottom: 48px;
+  text-align: center;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#reviews .section-heading h2 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  color: var(--text);
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+#reviews .section-heading p {
+  font-size: 1.1rem;
+  color: var(--muted);
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* Responsive Grid System */
+.reviews-grid {
   display: grid;
-  gap: 14px;
+  gap: 24px;
+  grid-template-columns: 1fr;
+  align-items: stretch; /* Forces all cards in a row to equal height */
 }
 
-#reviews .review-card{
-  background: rgba(255,255,255,.72);
-  border: 1px solid rgba(36,28,22,.08);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-soft);
-  padding: 22px;
+/* Premium Review Card Design */
+.review-card {
+  background: #ffffff;
+  border: 1px solid rgba(36, 28, 22, 0.05);
+  border-radius: 24px; /* Matches the premium curvature of Hero & Menu */
+  padding: 32px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  box-shadow: 0 16px 36px -12px rgba(36, 28, 22, 0.04),
+              0 4px 12px -4px rgba(36, 28, 22, 0.02);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-#reviews .review-stars{
-  color: #c28a16;
-  letter-spacing: .08em;
-  font-size: 1rem;
-  font-weight: 800;
-  line-height: 1;
+@media (min-width: 1024px) {
+  .review-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 32px 50px -16px rgba(36, 28, 22, 0.08),
+                0 8px 20px -8px rgba(36, 28, 22, 0.03);
+  }
 }
 
-#reviews .review-card p{
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.7;
+/* Visual Elements */
+.review-stars {
+  color: #d4a373; /* Elegant, muted gold that fits a cafe brand */
+  font-size: 1.15rem;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+  user-select: none;
 }
 
-#reviews .review-name{
-  display: block;
-  color: var(--brand-dark);
-  font-weight: 800;
-  font-size: .98rem;
+.review-text {
+  margin: 0 0 28px 0;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--text);
+  flex-grow: 1; /* Pushes the author block to the absolute bottom naturally */
+}
+
+/* Author Metadata aligned to the bottom */
+.review-author {
   margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid rgba(139, 94, 60, 0.1);
 }
 
-#reviews .review-trust-line{
-  margin: 18px 0 0;
+.review-name {
+  font-weight: 800;
+  color: var(--brand-dark);
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.review-role {
+  font-size: 0.82rem;
   color: var(--muted);
-  font-size: .95rem;
-  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
 }
 
-@media (min-width: 560px){
-  #reviews .review-grid{
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+/* ==========================================================================
+   GRID RESPONSIVENESS
+   ========================================================================== */
+
+/* Tablet (2 Columns) */
+@media (min-width: 768px) {
+  .reviews-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (min-width: 860px){
-  #reviews .review-grid{
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+/* Desktop (3 Columns) */
+@media (min-width: 1024px) {
+  .reviews-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
   }
 }
 
-@media (max-width: 560px){
-  #reviews .review-card{
-    padding: 18px;
+/* Mobile Adjustments */
+@media (max-width: 560px) {
+  #reviews {
+    padding: 60px 0;
+  }
+  .review-card {
+    padding: 24px;
   }
 }
 
