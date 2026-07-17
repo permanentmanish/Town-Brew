@@ -25,6 +25,8 @@
 <meta name="twitter:image" content="https://townbrew.vercel.app/images/share.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- PERFORMANCE FIX: Preload the main Above-The-Fold (LCP) background image -->
+  <link rel="preload" as="image" href="images/gallery/interior-1.jpg" fetchpriority="high">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <script type="application/ld+json">
@@ -520,74 +522,75 @@
     </section>
 
 <section id="gallery" class="section gallery">
-  <div class="container">
-    <div class="section-heading">
-      <div class="section-kicker">Gallery</div>
-      <h2>Clean ambiance & our signature treats</h2>
-      <p>Selected photos of our cafe, coffee, and snacks for a premium feel.</p>
-    </div>
-    <div class="gallery-grid">
-      <!-- Coffee Beverages -->
-      
-      <article class="gallery-card">
-        <img src="images/gallery/hot-coffee.jpg" alt="Latte art coffee" loading="lazy">
-        <div class="gallery-content">
-          <span>Beverage</span><strong>Latte Art</strong>
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-kicker">Gallery</div>
+          <h2>Clean ambiance & our signature treats</h2>
+          <p>Selected photos of our cafe, coffee, and snacks for a premium feel.</p>
         </div>
-      </article>
-      <article class="gallery-card">
-        <img src="images/gallery/cold-coffee.jpg" alt="Iced coffee" loading="lazy">
-        <div class="gallery-content">
-          <span>Beverage</span><strong>Iced Coffee</strong>
+        <div class="gallery-grid">
+          <!-- Coffee Beverages -->
+          
+          <article class="gallery-card">
+            <img src="images/gallery/hot-coffee.jpg" alt="Latte art coffee" width="600" height="400" loading="lazy" decoding="async">
+            <div class="gallery-content">
+              <span>Beverage</span><strong>Latte Art</strong>
+            </div>
+          </article>
+          <article class="gallery-card">
+            <img src="images/gallery/cold-coffee.jpg" alt="Iced coffee" width="600" height="400" loading="lazy" decoding="async">
+            <div class="gallery-content">
+              <span>Beverage</span><strong>Iced Coffee</strong>
+            </div>
+          </article>
+          <!-- Food Items -->
+          <article class="gallery-card">
+            <img src="images/gallery/pizza.jpg" alt="Cheesy pizza slice" width="600" height="400" loading="lazy" decoding="async">
+            <div class="gallery-content">
+              <span>Food</span><strong>Cheese Pizza</strong>
+            </div>
+          </article>
+          <article class="gallery-card">
+            <img src="images/gallery/veg-sandwich.jpg" alt="Grilled vegetable sandwich" width="600" height="400" loading="lazy" decoding="async">
+            <div class="gallery-content">
+              <span>Food</span><strong>Veggie Sandwich</strong>
+            </div>
+          </article>
+          <article class="gallery-card">
+            <img src="images/gallery/french-fries.jpg" alt="Crispy fries in bowl" width="600" height="400" loading="lazy" decoding="async">
+            <div class="gallery-content">
+              <span>Snack</span><strong>Crispy Fries</strong>
+            </div>
+          </article>
+          <article class="gallery-card">
+            <img src="images/gallery/chocolate-brownie.jpg" alt="Chocolate brownie" width="600" height="400" loading="lazy" decoding="async">
+            <div class="gallery-content">
+              <span>Dessert</span><strong>Chocolate Brownie</strong>
+            </div>
+          </article>
+          <!-- Ambience -->
+          <article class="gallery-card">
+            <!-- Note: Above-the-fold/Preloaded elements can use decoding sync to prevent micro-stutters during load -->
+            <img src="images/gallery/interior-1.jpg" alt="Cozy cafe interior" width="600" height="400" loading="lazy" decoding="sync">
+            <div class="gallery-content">
+              <span>Cafe</span><strong>Interior Space</strong>
+            </div>
+          </article>
+          <article class="gallery-card">
+            <img src="images/gallery/outdoorseating-area1.jpg" alt="Outdoor seating area" width="600" height="400" loading="lazy" decoding="async">
+            <div class="gallery-content">
+              <span>Cafe</span><strong>Patio Seating</strong>
+            </div>
+          </article>
+          <article class="gallery-card">
+            <img src="images/gallery/working.jpg" alt="Customer working on laptop" width="600" height="400" loading="lazy" decoding="async">
+            <div class="gallery-content">
+              <span>Comfort</span><strong>Study Area</strong>
+            </div>
+          </article>
         </div>
-      </article>
-      <!-- Food Items -->
-      <article class="gallery-card">
-        <img src="images/gallery/pizza.jpg" alt="Cheesy pizza slice" loading="lazy">
-        <div class="gallery-content">
-          <span>Food</span><strong>Cheese Pizza</strong>
-        </div>
-      </article>
-      <article class="gallery-card">
-        <img src="images/gallery/veg-sandwich.jpg" alt="Grilled vegetable sandwich" loading="lazy">
-        <div class="gallery-content">
-          <span>Food</span><strong>Veggie Sandwich</strong>
-        </div>
-      </article>
-      <article class="gallery-card">
-        <img src="images/gallery/french-fries.jpg" alt="Crispy fries in bowl" loading="lazy">
-        <div class="gallery-content">
-          <span>Snack</span><strong>Crispy Fries</strong>
-        </div>
-      </article>
-      <article class="gallery-card">
-        <img src="images/gallery/chocolate-brownie.jpg" alt="Chocolate brownie" loading="lazy">
-        <div class="gallery-content">
-          <span>Dessert</span><strong>Chocolate Brownie</strong>
-        </div>
-      </article>
-      <!-- Ambience -->
-      <article class="gallery-card">
-        <img src="images/gallery/interior-1.jpg" alt="Cozy cafe interior" loading="lazy">
-        <div class="gallery-content">
-          <span>Cafe</span><strong>Interior Space</strong>
-        </div>
-      </article>
-      <article class="gallery-card">
-        <img src="images/gallery/outdoorseating-area1.jpg" alt="Outdoor seating area" loading="lazy">
-        <div class="gallery-content">
-          <span>Cafe</span><strong>Patio Seating</strong>
-        </div>
-      </article>
-      <article class="gallery-card">
-        <img src="images/gallery/working.jpg" alt="Customer working on laptop" loading="lazy">
-        <div class="gallery-content">
-          <span>Comfort</span><strong>Study Area</strong>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
+      </div>
+    </section>
 
 
     <section class="section reviews" id="reviews">
@@ -747,6 +750,7 @@
   <div class="container footer-divider"></div>
 </footer>
 
-  <script src="script.js"></script>
+  <!-- PERFORMANCE FIX: Defer script execution to prevent HTML render blocking -->
+  <script src="script.js" defer></script>
 </body>
 </html>
