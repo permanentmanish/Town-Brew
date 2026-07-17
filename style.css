@@ -250,6 +250,10 @@ button,input,textarea,select{font:inherit}
   display: flex;
   flex-direction: column;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  
+  /* PERFORMANCE FIX: Force GPU layer rendering for backdrop-filter to offload CPU main thread during scroll */
+  will-change: transform;
+  transform: translateZ(0); 
 }
 
 /* Subtle elevation on hover for the main containers */
