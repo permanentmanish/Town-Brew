@@ -473,17 +473,15 @@ button,input,textarea,select{font:inherit}
 .hero-panel-1 { grid-column: 1 / -1; }
 .hero-panel-1::before {
   background: linear-gradient(180deg, rgba(22,12,8,0) 40%, rgba(22,12,8,0.8) 100%), 
-              url('images/gallery/interior-1.jpg') center/cover no-repeat;
+              url('images/gallery/interior-1.webp') center/cover no-repeat;
 }
-
 .hero-panel-2::before {
   background: linear-gradient(180deg, rgba(22,12,8,0) 30%, rgba(22,12,8,0.85) 100%), 
-              url('images/gallery/hot-coffee.jpg') center/cover no-repeat;
+              url('images/gallery/hot-coffee.webp') center/cover no-repeat;
 }
-
 .hero-panel-3::before {
   background: linear-gradient(180deg, rgba(22,12,8,0) 30%, rgba(22,12,8,0.85) 100%), 
-              url('images/gallery/veg-sandwich.jpg') center/cover no-repeat;
+              url('images/gallery/veg-sandwich.webp') center/cover no-repeat;
 }
 
 .hero-label {
